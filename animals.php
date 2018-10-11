@@ -11,5 +11,4 @@ ini_set('errors_reporting', E_ALL);
 
 var_dump($all_animals);
 
-
 ?>
