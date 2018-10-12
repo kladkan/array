@@ -11,18 +11,12 @@
   echo '<p>1. Исходный массив:</p>';
   var_dump($all_animals);
 
-  echo '<p>Количество всех животных = ' . (count($all_animals, COUNT_RECURSIVE) - count($all_animals)) . '<p>';
+  echo '<p>Количество всех животных = ' . (count($all_animals, COUNT_RECURSIVE) - count($all_animals)) . '<p>'; //для себя - возможно пригодится
 
-  var_dump(explode(' ', $all_animals['Africa']));
+
 
   echo '<p>2. Названия, состоящие из двух слов:</p>';
 
-
   $animals_2_word = [];
-
-
-
-
-
 
 ?>
