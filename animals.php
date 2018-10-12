@@ -10,6 +10,6 @@
 
   var_dump($all_animals);
 
-  ertyerty
+  
 
 ?>
