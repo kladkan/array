@@ -9,7 +9,4 @@
   );
 
   var_dump($all_animals);
-
-  
-
 ?>
