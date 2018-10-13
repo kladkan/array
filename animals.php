@@ -15,12 +15,13 @@
 
   foreach($all_animals as $continent => $animal) {
     foreach($animal  as  $key => $value) {
+
       echo "<p>$continent: $value</p>";
 
       $space = strpos($value, ' ');
       if ($space !== false) {
         //здесь надо записать значение $value в новый массив
-        $animals_2_word = array_fill(0,  $value);
+        $animals_2_word = array_fill(0, count($all_animals), $value);
       }
     }
   }
