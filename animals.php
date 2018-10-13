@@ -11,9 +11,21 @@
   echo '<p>1. Исходный массив</p>';
   var_dump($all_animals);
 
-  echo '<p>Количество всех животных = ' . (count($all_animals, COUNT_RECURSIVE) - count($all_animals)) . '<p>'; //для себя - возможно пригодится
+  echo '<p>Количество всех животных = ' . (count($all_animals, COUNT_RECURSIVE) - count($all_animals)) . ':</p>'; //для себя - возможно пригодится
 
-  var_dump(explode(" ", $all_animals));
+  foreach($all_animals as $continent => $animal) {
+    foreach($animal  as  $key => $value) {
+      echo "<p>$continent: $value</p>";
+    }
+  }
+
+
+
+
+  echo "<p>==========================================================================</p>";
+
+  echo "<p>============================================================================</p>";
+
 
   echo '<p>2. Названия, состоящие из двух слов:</p>';
 
