@@ -22,20 +22,20 @@
       if ($space !== false) {
         //далее записываем значение $value в новый массив
         $animals_2_word[] = $value;
+        explode(' ', $value);
 
       }
     }
   }
 
-  echo '</br><p>2. Названия, состоящие из двух слов:</p>';
-  var_dump($animals_2_word);
-
+  echo '<p>2. Названия, состоящие из двух слов:</p>';
   foreach($animals_2_word as $value_2_word) {
     echo "<p>$value_2_word</p>";
   }
 
 
   echo "<p>==============черновик с разбором примеров===============================</p>";
+
   $mystring = 'ab c';
   $findme   = ' ';
   $pos = strpos($mystring, $findme);
