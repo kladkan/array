@@ -13,6 +13,7 @@
   foreach($all_animals as $continent => $animal) {
     foreach($animal  as  $key => $value) {
 
+      $continent_animal[$continent] = $value;
       echo "<p>$continent: $value</p>";
 
       $space = strpos($value, ' ');
