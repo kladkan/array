@@ -29,15 +29,24 @@
     }
   }
 
+/*
   var_dump($word_1_list);
   echo '<br>';
   var_dump($word_2_list);
+*/
 
   echo '<br><p>2. Названия, состоящие из двух слов:</p>';
   foreach($animals_2_word as $value_2_word) {
     echo "<p>$value_2_word</p>";
   }
 
+  echo '<br><p>3. "Фантазийные" названия:</p>';
+  shuffle($word_2_list);
+
+  foreach ($word_1_list as $i => $word) {
+    echo '<p>'. $new_animals[] = $word . ' ' . $word_2_list[$i] .'</p>';
+
+  }
 
   echo "<p>==============черновик с разбором примеров===============================</p>";
 
