@@ -22,13 +22,18 @@
       if ($space !== false) {
         //далее записываем значение $value в новый массив
         $animals_2_word[] = $value;
-        explode(' ', $value);
-
+        $division = explode(' ', $value);
+        $word_1_list[] = $division[0];
+        $word_2_list[] = $division[1];
       }
     }
   }
 
-  echo '<p>2. Названия, состоящие из двух слов:</p>';
+  var_dump($word_1_list);
+  echo '<br>';
+  var_dump($word_2_list);
+
+  echo '<br><p>2. Названия, состоящие из двух слов:</p>';
   foreach($animals_2_word as $value_2_word) {
     echo "<p>$value_2_word</p>";
   }
