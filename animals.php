@@ -7,12 +7,9 @@
     'Eurasia' => ['Vulpes lagopus', 'Canis lupus', 'Lynx', 'Odobenus rosmarus'],
     'Antarctica' => ['Mirounga', 'Lobodon carcinophagus', 'Aptenodytes forsteri']
   ];
-
-  echo '<p>1. Исходный массив</p>';
-  var_dump($all_animals);
-
+  echo '<h1>Домашняя работа "Жестокое обращение с животными"</h1>';
+  echo '<h2>1. Исходный массив</h2>';
   echo '<p>Количество всех животных = ' . (count($all_animals, COUNT_RECURSIVE) - count($all_animals)) . ':</p>'; //для себя - возможно пригодится
-
   foreach($all_animals as $continent => $animal) {
     foreach($animal  as  $key => $value) {
 
@@ -29,18 +26,12 @@
     }
   }
 
-/*
-  var_dump($word_1_list);
-  echo '<br>';
-  var_dump($word_2_list);
-*/
-
-  echo '<br><p>2. Названия, состоящие из двух слов:</p>';
+  echo '<br><h2>2. Названия, состоящие из двух слов:</h2>';
   foreach($animals_2_word as $value_2_word) {
     echo "<p>$value_2_word</p>";
   }
 
-  echo '<br><p>3. "Фантазийные" названия:</p>';
+  echo '<br><h2>3. "Фантазийные" названия:</h2>';
   shuffle($word_2_list);
 
   foreach ($word_1_list as $i => $word) {
