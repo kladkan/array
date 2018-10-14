@@ -13,7 +13,7 @@
   foreach($all_animals as $continent => $animal) {
     foreach($animal  as  $key => $value) {
 
-      $continent_animal[$continent] = $value;
+      //*для доп задания: $continent_animal[] = array("$continent" => $value);
       echo "<p>$continent: $value</p>";
 
       $space = strpos($value, ' ');
@@ -25,6 +25,8 @@
       }
     }
   }
+
+  //*для доп задания: var_dump($continent_animal);
 
   echo '<br><h2>2. Названия, состоящие из двух слов:</h2>';
   foreach($animals_2_word as $value_2_word) {
