@@ -57,6 +57,8 @@
   echo '<p>перемешанный список вторых слов</p>';
     var_dump($word_2_list);
 
+
+  //цикл для соединения слов из двух массивов
   foreach ($word_1_list as $i => $word) {
     echo '<p>'. $new_animals[] = $word . ' ' . $word_2_list[$i] .'</p>';
 
