@@ -12,8 +12,6 @@
   echo '<p>Количество всех животных = ' . (count($all_animals, COUNT_RECURSIVE) - count($all_animals)) . ':</p>'; //для себя - возможно пригодится
   foreach($all_animals as $continent => $animal) {
     foreach($animal  as  $key => $value) {
-
-      //*для доп задания: $continent_animal[] = array("$continent" => $value);
       echo "<p>$continent: $value</p>";
 
       $space = strpos($value, ' ');
@@ -26,8 +24,6 @@
     }
   }
 
-  //*для доп задания: var_dump($continent_animal);
-
   echo '<br><h2>2. Названия, состоящие из двух слов:</h2>';
   foreach($animals_2_word as $value_2_word) {
     echo "<p>$value_2_word</p>";
@@ -38,9 +34,6 @@
 
   foreach ($word_1_list as $i => $word) {
     echo '<p>'. $new_animals[] = $word . ' ' . $word_2_list[$i] .'</p>';
-
   }
-
-
 
 ?>
