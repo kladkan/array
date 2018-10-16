@@ -43,6 +43,10 @@
     // для отслеживания результата доп задания
     echo '<p>общий список</p>';
       var_dump($all_animals);
+    echo '<br>';
+      print_r($all_animals);
+    echo '<br>';
+    print_r($continent_animal);
     echo '<p>список первых слов</p>';
       var_dump($word_1_list);
     echo '<p>список вторых слов</p>';
