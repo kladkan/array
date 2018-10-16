@@ -23,7 +23,7 @@
         $animals_2_word[] = array("$continent" => $value);
         $division = explode(' ', $value);
         $word_1_list[] = array("$continent" => $division[0]);
-        $word_2_list[] = array($division[1]);
+        $word_2_list[] = array("$continent" => $division[1]);
 
         //$word_1_list[] = $division[0];
         //$word_2_list[] = $division[1];
