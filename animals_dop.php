@@ -7,65 +7,72 @@
     'Eurasia' => ['Vulpes lagopus', 'Canis lupus', 'Lynx', 'Odobenus rosmarus'],
     'Antarctica' => ['Mirounga', 'Lobodon carcinophagus', 'Aptenodytes forsteri']
   ];
-  echo '<h1>Домашняя работа "Жестокое обращение с животными"</h1>';
-  echo '<h2>1. Исходный массив</h2>';
-  echo '<p>Количество всех животных = ' . (count($all_animals, COUNT_RECURSIVE) - count($all_animals)) . ':</p>'; //для себя - возможно пригодится
+  
+  echo '1. Исходный массив<br>';
+  echo "<pre>";
+  var_dump($all_animals);
+  echo "</pre>";
+
   foreach($all_animals as $continent => $animal) {
-    foreach($animal  as  $key => $value) {
-      echo "<p>$continent: $value</p>";
-
-      //для доп задания
-      $continent_animal[] = array("$continent" => $value);
-      //для доп задания
-
-      $space = strpos($value, ' ');
-      if ($space !== false) {
-        $animals_2_word[] = array("$continent" => $value);
+    foreach($animal as $value) {
+      if (count(explode(' ', $value)) == 2) {
+        $array2word[] = $value; // палучаем массив животных с двумя словами
         $division = explode(' ', $value);
-        $word_1_list[] = array("$continent" => $division[0]);
-        $word_2_list[] = array("$continent" => $division[1]);
-
-        //$word_1_list[] = $division[0];
-        //$word_2_list[] = $division[1];
+        $word_1_list[] = array($continent => $division[0]); //массив первых слов с континентами
+        $word_2_list[] = $division[1]; // массив вторых слов без континентов
       }
     }
   }
 
+  echo '<br>2. Названия, состоящие из двух слов:<br>';
+  echo implode(', ', $array2word);
 
+  echo '<br>3. "Фантазийные" названия:<br>';
+//перемешиваем массив вторых слов
+  shuffle($word_2_list);
 
-  echo '<br><h2>2. Названия, состоящие из двух слов:</h2>';
-  foreach($animals_2_word as $cont2 => $c2) {
-    foreach ($c2 as $n => $value_2_word) {
-      echo "<p>$n: $value_2_word</p>";
+  //цикл для соединения слов из двух массивов
+
+  foreach ($word_1_list as $i => $val) {
+    foreach ($val as $key => $value) {
+      $new_animals[] = array($key => $value . ' ' . $word_2_list[$i]); //массив фантазийных животных
     }
   }
 
-    // для отслеживания результата доп задания
-    echo '<p>общий список</p>';
-      var_dump($all_animals);
-    echo '<br>';
-      print_r($all_animals);
-    echo '<br>';
-    print_r($continent_animal);
-    echo '<p>список первых слов</p>';
-      var_dump($word_1_list);
-    echo '<p>список вторых слов</p>';
-      var_dump($word_2_list);
-    echo '<p>список из двух слов</p>';
-      var_dump($animals_2_word);
-    // для отслеживания результата доп задания
+//фантазийные животные общим списком
+foreach ($new_animals as $value) {
+  foreach ($value as $val) {
+    echo $val.'<br>';
+  }
+}
 
-  echo '<br><h2>3. "Фантазийные" названия:</h2>';
-  shuffle($word_2_list);
+//фантазийные животные по континентам
+echo '<br>Дополнительное задание:<br>';
 
-  echo '<p>перемешанный список вторых слов</p>';
-    var_dump($word_2_list);
-
-
-  //цикл для соединения слов из двух массивов
-  foreach ($word_1_list as $i => $word) {
-    echo '<p>'. $new_animals[] = $word . ' ' . $word_2_list[$i] .'</p>';
+foreach ($new_animals as $i => $value) {
+  foreach ($value as $continent => $val) {
+    echo $continent;
+    echo $val.'<br>';
 
   }
-
+}
 ?>
+
+<!--
+<html>
+<head>
+  <title>Задача про животных</title>
+</head>
+<body>
+  <h1>Домашняя работа "Жестокое обращение с животными"</h1>
+  <h2>1. Исходный массив:</h2>
+    <pre><?php var_dump($all_animals) ?></pre>
+  
+  <h2>2. Названия, состоящие из двух слов:</h2>
+    <?php echo implode(', ', $array2word) ?>
+
+  <h2>3. "Фантазийные" названия:</h2>
+
+</body>
+</html>
+-->
